@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Редактирование предмета</title>
+    <meta charset="utf-8" />
+    <style>.field{width:180px;}</style>
+</head>
+<body>
+    <h1>Редактирование предмета</h1>
+     <form action="/edit" method="POST">
+     
+        <input type="hidden" name="ID" value="{{items.ID}}" />
+
+        <label>Имя</label><br>
+        <input name="Name" value="{{items.Name}}" class="field" /><br><br>
+
+        <label>Описание</label><br>
+        <input name="Desc" value="{{items.Desc}}" class="field" /><br><br>
+
+        <input type="submit" value="Редактировать" />
+     </form>
+     <a href="/">Вернуться</a>
+</body>
+<html>
