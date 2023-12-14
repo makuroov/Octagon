@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Список предметов</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <h1>Список предметов</h1>
+    <p><a href="/create">Добавить предмет</a></p>
+    <table>
+        <tr><th>Name</th><th>Description</th><th></th></tr>
+        {{#each items}}
+            <tr>
+                <td>{{this.Name}}</td>
+                <td>{{this.Desc}}</td>
+                <td>
+                    <a href="/edit/{{this.ID}}">Редактировать</a>
+                    
+                    <form action="/delete/{{this.ID}}" method="POST" style="display:inline;">
+                        <input type="submit" value="Удалить" />
+                    </form>
+                </td>
+            </tr>
+        {{/each}}
+    </table>
+</body>
+<html>
